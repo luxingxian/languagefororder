@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/w_file_content.css" />
+	</head>
+
+	<body>
+		<div class="login">
+			<div class="login_mask">
+				<div class="login_center">
+					<div class="tc_popup"></div>
+					<div class="login_center_name">
+						<p>用户登录</p>
+					</div>
+					<div class="login_center_user">
+						<p>用户名</p>
+						<input type="text" placeholder="请输入用户名" maxlength="12"/>
+					</div>
+					<div class="login_center_password">
+						<p>密码</p>
+						<input type="password" placeholder="请输入密码" />
+					</div>
+					<div class="login_center_yzm">
+						<p>验证码</p>
+						<div class="yzm_left fl">
+							<input type="text" placeholder="请输入验证码" maxlength="5"/>
+						</div>
+						<div class="yzm_right fr" onclick="getPic();">
+							<img src="picCheckCode" id="codePic">
+						</div>
+					</div>
+					<div class="login_btn">
+						<input type="submit" value="登录" class="submitBtn" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+
+		<script>
+			(function($) {
+				$(document).ready(function() {
+					$(".submitBtn").click(function() {
+						var loginName = $(".login_center_user input").val()
+						var loginPwd = $('.login_center_password input').val()
+                        var validcode = $(".yzm_left input").val()
+						$.ajax({
+							type: "post",
+							url: "login",
+							async: true,
+							data: {
+								loginName: loginName,
+								loginPwd: loginPwd,
+                                checkCode: validcode
+							},
+							beforeSend:function () {
+                                if(!loginName) {
+                                    $('.tc_popup').fadeIn().delay(1000).fadeOut().html("用户账号不能为空");
+                                    return false;
+                                }
+                                if(!loginPwd) {
+                                    $('.tc_popup').fadeIn().delay(1000).fadeOut().html("用户密码不能为空")
+                                    return false;
+                                }
+                                if(!validcode) {
+                                    $('.tc_popup').fadeIn().delay(1000).fadeOut().html("验证码不能为空")
+                                    return false;
+                                }
+                                if(loginName.length < 6 || loginName.length > 12) {
+                                    $('.tc_popup').fadeIn().delay(1000).fadeOut().html("用户名长度应在6到12个字符之间")
+                                    return false;
+                                }
+                                if(loginPwd.length < 6 || loginPwd.length > 12) {
+                                    $('.tc_popup').fadeIn().delay(1000).fadeOut().html("密码长度应在6到12个字符之间")
+                                    return false;
+                                }
+                                if(validcode.length < 5 || validcode.length > 12) {
+                                    $('.tc_popup').fadeIn().delay(1000).fadeOut().html("验证码长度应在0到6个字符之间");
+                                    return false;
+                                }
+                                return true;
+                            },
+							success: function(result) {
+								console.log(result);
+								if(!result.result) {
+									$('.tc_popup').fadeIn().delay(1000).fadeOut().html(result.msg);
+								}else{
+                                    location.href = "Shop_maintenance.html";
+								}
+							}
+						});
+					})
+				});
+			})(jQuery);
+		</script>
+		<script type="text/javascript">
+			function getPic() {
+				$("#codePic").attr("src", "picCheckCode?flag=" + Math.random());
+			};
+		</script>
+
+	</body>
+
+</html>

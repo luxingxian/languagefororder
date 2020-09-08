@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>店铺维护</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="dist/css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/w_file_content.css" />
+		<link rel="stylesheet" href="css/jedate.css" />
+	</head>
+
+	<body>
+		<div class="contentBox">
+			<!--头部-->
+			<div class="contentHeader">
+				<p><i></i>
+					<a href="javascript:;" class="logout"><img src="images/logout.png" />注销</a>
+				</p>
+
+			</div>
+			<!--内容主题-->
+			<div class="mainBox clearfix">
+				<!--左侧边栏-->
+				<div class="slideMenu fl">
+					<ul>
+						<li class="active">
+							<a href="Shop_maintenance.html">
+								<p><img src="img/icon_shop_w.png"><i>店铺维护</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="inquiry.html">
+								<p><img src="img/icon_require_g.png"><i>查询</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="dish_operation.html">
+								<p><img src="img/icon_dish_g.png"><i>菜品</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="order.html">
+								<p><img src="img/icon_order_g.png"><i>订单</i></p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--右侧编辑中心-->
+				<div class="editorCenter fr">
+					<div class="shop_content">
+						<div class="shop_content_left fl">
+							<div class="shop_content_left_top">
+								<div class="store_information">
+									<h1>店铺信息</h1>
+									<input type="hidden" class="storeId" />
+									<div class="store_name door_name">
+										<p>店铺名称</p>
+									</div>
+									<div class="store_name store_time">
+										<p>营业时间<i>(示例 01:00)</i></p>
+										<label class="demo_label wmy_date1">
+        									<input class="demo_radio all-time" value="0" type="radio" name="demo-radio">
+        									<span class="demo_radioInput"></span>全时段
+    					 				</label>
+										<label class="demo_label wmy_date2">
+        									<input class="demo_radio" type="radio" value="1" name="demo-radio">
+        									<span class="demo_radioInput"></span>分时段
+    					 				</label>
+										<div class="all_time fr">
+											<input class="wicon" type="text" value="" id="datehz1"> -
+											<input class="wicon1" type="text" value="" id="datehz2">
+										</div>
+										<div class="sep_time fr">
+											<em>
+												<input class="wicon" type="text" value="" id="datehz3"> - <input class="wicon1" type="text" value="" id="datehz4">
+											</em>
+											<em>
+												<input class="wicon" type="text" value="" id="datehz5"> - <input class="wicon1" type="text" value="" id="datehz6">
+											</em>
+										</div>
+									</div>
+									<div class="store_name door_phone">
+										<p>店铺电话</p>
+									</div>
+									<div class="store_name door_address">
+										<p>店铺地址</p>
+									</div>
+									<div class="store_figure">
+										<p>店铺推广图（640×214像素）jpg、png</p>
+										<div id="preview">
+											<div onClick="$('#previewImg').click();" class="up_load">
+												<p>
+													<em>+</em>
+													<em>上传图片</em>
+												</p>
+											</div>
+										</div>
+										<input type="file" class="w_load" onChange="previewImage(this)" style="display: none;" id="previewImg">
+										<em class="up_change"><i onClick="$('#previewImg').click();">更换</i></em>
+										<em class="up_touming"></em>
+									</div>
+									<div class="store_features">
+										<p>店铺特色</p>
+										<div class="all_features">
+											<div class="features_class w_class1">
+												<h2>业态分类（单选）</h2>
+											</div>
+											<div class="features_class w_class2">
+												<h2>菜系分类（单选）</h2>
+											</div>
+											<div class="features_class w_class3">
+												<h2>特性分类（单选）</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="shop_content_left_bottom">
+								<div class="class_add">
+									<h1>品类添加（选择）</h1>
+									<div class="all_features">
+										<div class="features_class w_class4">
+											<h2>促销类</h2>
+										</div>
+										<div class="features_class w_class5">
+											<h2>常规类</h2>
+										</div>
+									</div>
+									<div class="view_introd">
+										<div class="text_introd">
+											<i></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="shop_content_right fr">
+							<h1 class="food_model">菜品模板</h1>
+							<div class="template_type">
+							</div>
+							<div class="model_show">
+								<div class="slider_content">
+									<ul class="slider_box clearfix">
+									</ul>
+								</div>
+								<img src="images/left_disable.png" class="left_btn slider_btn" />
+								<img src="images/w_right.png" class="right_btn slider_btn" />
+							</div>
+							<p class="model_name"></p>
+							<div class="tem_introd tem_duce">
+								<h1>模板介绍：</h1>
+							</div>
+							<p class="loading"><span></span></p>
+						</div>
+						<div class="shop_bottom">
+							<input type="button" value="确认" class="save" />
+							<input type="button" value="取消" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="pup_tip">设置成功</p>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script src="dist/js/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<!--模板-->
+		<script type="text/javascript">
+			$(function() {
+				//模板展示接口调用
+				$.ajax({
+					type: "get",
+					url: "store/getStoreBasicInfo",
+					async: false,
+					success: function(res) {
+						if(res.result) {
+							var templatePics = res.data.templatePics;
+							var templates = res.data.templates;
+
+							var templateResources = new Object();
+
+							if(templates) {
+								$(templates).each(function() {
+									var templateId = this.id;
+									var picArray = new Array();
+									$(templatePics).each(function() {
+										if(this.templateId == templateId) {
+											picArray.push(this)
+										}
+									})
+									templateResources[templateId] = picArray;
+								})
+
+								$(".template_type").delegate("em", 'click', function() {
+									if($(this).hasClass("disable")) {
+										return;
+									}
+									$(this).addClass("active").siblings().removeClass("active");
+									var intr = $(this).find("input").val();
+									$(".tem_introd").html("<h1>模板介绍：</h1>" + intr);
+
+									//替换模板图片资源
+									var templateId = $(this).find(".mbxz:hidden").val()
+
+									var picArray = templateResources[templateId];
+									$(".slider_box").empty();
+									$(picArray).each(function() {
+										$(".slider_box").append('<li>' +
+											'<img src="' + this.url + '" name="' + this.name + '"/>' +
+											'</li>');
+									})
+									slider();
+									$(".left_btn").trigger("click");
+								});
+							}
+						}
+					}
+				})
+			});
+			//轮播
+			function slider() {
+				var li_width = $(".slider_box li").width();
+				var li_len = $(".slider_box li").length;
+				var ul_width = li_width * li_len;
+				$(".slider_box").width(ul_width);
+				var ind = 0;
+				$(".slider_box").css("left", "0");
+				$(".left_btn").off("click");
+				$(".right_btn").off("click");
+				$(".left_btn").attr("src", "images/left_disable.png");
+				$(".right_btn").attr("src", "images/w_right.png");
+				$(".right_btn").on("click", function() {
+					$(".left_btn").attr("src", "images/w_left.png");
+					if(ind == li_len - 2) {
+						$(this).attr("src", "images/right_disable.png")
+					}
+					if(ind == li_len - 1) {
+						return;
+					}
+					ind++;
+					$(".slider_box").animate({
+						"left": ind * li_width * -1
+					}, 500);
+					var name = $(".slider_box li").eq(ind).find("img").attr("name");
+					$(".model_name").html(name);
+				});
+				$(".left_btn").on("click", function() {
+					$(".right_btn").attr("src", "images/w_right.png");
+					if(ind == 1) {
+						$(this).attr("src", "images/left_disable.png");
+					}
+					if(ind == 0) {
+						var name = $(".slider_box li").eq(ind).find("img").attr("name");
+						$(".model_name").html(name);
+						return;
+					}
+					ind--;
+					$(".slider_box").animate({
+						"left": ind * li_width * -1
+					}, 500);
+					var name = $(".slider_box li").eq(ind).find("img").attr("name");
+					$(".model_name").html(name);
+				})
+			}
+		</script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				url: "store/getStoreBasicInfo",
+				success: function(result) {
+					var cgl = result.data.generalCategories
+					var cxl = result.data.promotionalCategories
+					var bq = result.data.tags
+					var mb = result.data.templates
+					var mbtp = result.data.templatePics
+					var mySwiper = "";
+					//常规类
+					if(cgl != undefined) {
+						for(var i = 0; i < cgl.length; i++) {
+							$(".w_class5").append("<span><input type='checkbox' class='check_box' id='b1'><label for='b1' id='" + cgl[i].id + "'></label><em><input type='hidden' value='" + cgl[i].introduce + "'><input class='cglxz' type='hidden' value='" + cgl[i].id + "' />" + cgl[i].name + "</em></span>")
+						}
+					}
+					//促销类
+					if(cgl != undefined) {
+						for(var i = 0; i < cxl.length; i++) {
+							for(var i = 0; i < cxl.length; i++) {
+								$(".w_class4").append("<span><input type='checkbox' class='check_box' id='b1'><label for='b1'></label><em><input type='hidden' value='" + cxl[i].introduce + "'><input class='cxlxz' type='hidden' value='" + cxl[i].id + "' />" + cxl[i].name + "</em></span>")
+							}
+						}
+					}
+					//========店铺特色
+					//业态分类
+					if(cgl != undefined) {
+						for(var i = 0; i < bq.length; i++) {
+							if(bq[i].type == 0) {
+								$(".w_class1").append("<em><input class='bqxz' type='hidden' value='" + bq[i].id + "' />" + bq[i].name + "</em>");
+							}
+						}
+					}
+					//菜系特色
+					if(cgl != undefined) {
+						for(var i = 0; i < bq.length; i++) {
+							if(bq[i].type == 1) {
+								$(".w_class2").append("<em><input class='bqxz' type='hidden' value='" + bq[i].id + "' />" + bq[i].name + "</em>");
+							}
+						}
+					}
+					//特性分类
+					if(cgl != undefined) {
+						for(var i = 0; i < bq.length; i++) {
+							if(bq[i].type == 2) {
+								$(".w_class3").append("<em><input class='bqxz' type='hidden' value='" + bq[i].id + "' />" + bq[i].name + "</em>");
+							}
+						}
+					}
+					//模板
+					for(var i = 0; i < mb.length; i++) {
+						$(".template_type").append("<em><input type='hidden' class='xzz' value='" + mb[i].introduce + "' /><input class='mbxz' type='hidden' value='" + bq[i].id + "' />" + mb[i].name + "</em>")
+
+					}
+
+					$.ajax({
+						type: "get",
+						url: "store/getStoreInfo",
+						success: function(result) {
+							var dpxx = result.data.store
+							var xzcgl = result.data.generalCategories
+							var xzcxl = result.data.promotionalCategories
+							var xzbq = result.data.storeTags
+							var xzmb = result.data.templateId
+							var timeType = result.data.store.businessHoursType
+							var allTimebegin = result.data.store.businessHoursBegin
+							var allTimeend = result.data.store.businessHoursEnd
+							var timeBegin = result.data.store.businessHoursBranchBegin
+							var timeEnd = result.data.store.businessHoursBranchEnd
+							var storeId = result.data.store.id
+
+							$(".storeId").val(storeId)
+							//店铺
+							$(".contentHeader i").html(dpxx.name);
+							//店铺名称
+							$(".door_name").append("<input id='store_name' type='text' value='" + dpxx.name + "' >");
+							//店铺电话
+							$(".door_phone").append("<input id='store_tel' type='text' value='" + dpxx.telephone + "' >");
+							//店铺地址
+							$(".door_address").append("<input id='store_address' type='text' value='" + dpxx.address + "' >");
+							//店铺推广图
+							$("#preview").append("<img src=' " + dpxx.picUrl + " ' />");
+
+							//
+							$(function() {
+								var wImg = $("#preview").find("img").length;
+								if(wImg == "") {
+									$(".up_change").hide();
+									$(".up_load").show()
+								} else {
+									$(".up_load").hide()
+									$(".up_change").show();
+
+								}
+								$("#previewImg").change(function() {
+									if($(this).val == "") {
+										$(".up_change").hide();
+									} else {
+										$(".up_change").show();
+										$(".up_touming").show();
+									}
+								})
+							})
+
+							//店铺信息
+							//营业时间
+							if(timeType == 0) {
+								$(".wmy_date1").find("input").attr("checked", "checked");
+								$(".all_time").find("#datehz1").val(allTimebegin);
+								$(".all_time").find("#datehz2").val(allTimeend);
+								$(".all_time").show();
+								$(".sep_time").hide();
+							}
+							if(timeType == 1) {
+								$(".wmy_date2").find("input").attr("checked", "checked");
+								$(".sep_time").find("#datehz3").val(allTimebegin);
+								$(".sep_time").find("#datehz4").val(allTimeend);
+								$(".sep_time").find("#datehz5").val(timeBegin);
+								$(".sep_time").find("#datehz6").val(timeEnd);
+								$(".all_time").hide();
+								$(".sep_time").show();
+							}
+
+							//常规类选中
+							if(xzcgl != undefined) {
+								for(var i = 0; i < xzcgl.length; i++) {
+									$(".cglxz").each(function() {
+										if(xzcgl[i].categoryId == parseInt($(this).val())) {
+											$("#" + xzcgl[i].categoryId + "").addClass("checked");
+										}
+									})
+								}
+							}
+							//促销类选中
+							if(xzcxl != undefined) {
+								for(var i = 0; i < xzcxl.length; i++) {
+									$(".cxlxz").each(function() {
+										if(xzcxl[i].categoryId == parseInt($(this).val())) {
+											$(this).parent("em").siblings("label").addClass("checked")
+										}
+									})
+								}
+							}
+							//=====标签
+							//业态分类选中
+							if(xzbq != undefined) {
+								for(var i = 0; i < xzbq.length; i++) {
+									$(".bqxz").each(function() {
+										if(xzbq[i].tagId == parseInt($(this).val())) {
+											$(this).parent("em").addClass("active")
+										}
+									})
+								}
+							}
+							//模板选中
+							if(xzmb != undefined) {
+								$(".template_type em .mbxz[value='" + xzmb + "']").parent().trigger("click")
+							}
+							//判断模板是否有图
+							if(result.data.picFlag) {
+								$(".template_type em").removeClass("disable");
+							} else {
+								$(".template_type em").addClass("disable");
+							}
+
+						}
+					});
+				}
+			});
+			//基础信息
+
+			$(".save").click(function() {
+				var json = []; //定义传递参数
+
+				var storePo = new Object(); //定义参数实体
+
+				var store = new Object(); //定义参数属性实体
+				var storeName = $("#store_name").val(); //获取数据
+				var storeTel = $("#store_tel").val();
+				var storeAddress = $("#store_address").val();
+				var storeImg = $("#preview img").attr("src");
+				var storeId = $(".storeId").val();
+
+				var storeType = $(".store_time").find("input:checked").val();
+
+				if(storeType == 0) {
+					var alltimeStrat = $(".all_time #datehz1").val();
+					var alltimeend = $(".all_time #datehz2").val();
+					store.businessHoursBegin = alltimeStrat
+					store.businessHoursEnd = alltimeend
+					store.businessHoursBranchBegin = ""
+					store.businessHoursBranchEnd = ""
+				}
+				if(storeType == 1) {
+					var onetimeStrat = $(".sep_time #datehz3").val();
+					var onetimeEnd = $(".sep_time #datehz4").val();
+					var twotimeStrat = $(".sep_time #datehz5").val();
+					var twotimeEnd = $(".sep_time #datehz6").val();
+					store.businessHoursBegin = onetimeStrat
+					store.businessHoursEnd = onetimeEnd
+					store.businessHoursBranchBegin = twotimeStrat
+					store.businessHoursBranchEnd = twotimeEnd
+				}
+
+				//模板
+				if($(".template_type").find('em').hasClass("active")) {
+					var templateId = $(".template_type em.active").find(".mbxz").val();
+				}
+
+				store.id = storeId;
+				store.name = storeName; //填充 属性实体的属性值
+				store.telephone = storeTel;
+				store.address = storeAddress;
+				store.picUrl = storeImg;
+				store.templateId = templateId;
+				store.businessHoursType = storeType
+
+				//常规类
+				var generalCategoryIds = "";
+
+				if($(".w_class5").find("label").hasClass("checked")) {
+					$(".w_class5 label.checked").siblings("em").find(".cglxz").each(function() {
+						var cgl = $(this).val();
+						generalCategoryIds = generalCategoryIds + "," + cgl
+					})
+					generalCategoryIds = generalCategoryIds.substring(1)
+				}
+				//促销类
+				var promotionalCategoryIds = "";
+
+				if($(".w_class4").find("label").hasClass("checked")) {
+					$(".w_class4 label.checked").siblings("em").find(".cxlxz").each(function() {
+						var cxl = $(this).val();
+						promotionalCategoryIds = promotionalCategoryIds + "," + cxl
+					})
+					promotionalCategoryIds = promotionalCategoryIds.substring(1)
+				}
+
+				//标签
+				var storeTagIds = "";
+
+				if($(".all_features").find("em").hasClass("active")) {
+					$(".all_features em.active").find(".bqxz").each(function() {
+						var yefl = $(this).val();
+						storeTagIds = storeTagIds + "," + yefl
+					})
+					storeTagIds = storeTagIds.substring(1)
+				}
+
+				storePo.store = store; //填充参数实体
+				storePo.generalCategoryIds = generalCategoryIds; //填充常规类参数实体
+				storePo.promotionalCategoryIds = promotionalCategoryIds; //填充促销类参数实体
+				storePo.storeTagIds = storeTagIds;
+				json.push(storePo);
+				var allj = JSON.stringify(storePo);
+				$.ajax({
+					type: "post",
+					url: "store/updateStoreInfo",
+					contentType: "application/json",
+					async: true,
+					data: allj,
+					success: function(result) {
+						$(".pup_tip").fadeIn().delay(1000).fadeOut();
+					}
+				});
+			})
+		</script>
+
+		<!--//chechbox选择效果-->
+		<script>
+			$(".w_class1").delegate("em", 'click', function() {
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+				} else {
+					$(".w_class1 em").removeClass("active");
+					$(this).addClass("active");
+				}
+			});
+			$(".w_class2").delegate("em", 'click', function() {
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+				} else {
+					$(".w_class2 em").removeClass("active");
+					$(this).addClass("active");
+
+				}
+			});
+			$(".w_class3").delegate("em", 'click', function() {
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+				} else {
+					$(".w_class3 em").removeClass("active");
+					$(this).addClass("active");
+				}
+			});
+			$(".w_class4").delegate("label", 'click', function() {
+				if($(this).hasClass("checked")) {
+					$(this).removeClass("checked");
+				} else {
+					$(this).toggleClass("checked");
+				}
+			});
+			$(".w_class4").delegate("em", 'click', function() {
+				$(".w_class5 em").removeClass("active");
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+					$(".text_introd i").html("");
+				} else {
+					$(".w_class4 em").removeClass("checked");
+					$(this).addClass("active");
+					var intr = $(this).find("input").val();
+					$(".text_introd i").html(intr);
+				}
+			});
+			$(".w_class5").delegate("label", 'click', function() {
+				if($(this).hasClass("checked")) {
+					$(this).removeClass("checked");
+				} else {
+					$(this).toggleClass("checked");
+				}
+			});
+			$(".w_class5").delegate("em", 'click', function() {
+				$(".w_class4 em").removeClass("active");
+				if($(this).hasClass("active")) {
+					$(this).removeClass("active");
+					$(".text_introd i").html("");
+				} else {
+					$(".w_class5 em").removeClass("active");
+					$(this).addClass("active");
+					var intr = $(this).find("input").val();
+					$(".text_introd i").html(intr)
+				}
+			});
+		</script>
+
+		<!--店铺信息-->
+		<script>
+			$(function() {
+				//左右等高处理
+				$(".shop_content_right").height($(".shop_content_left").height());
+				$(".slideMenu").height($(".editorCenter").height());
+			})
+		</script>
+		<!--营业时间切换-->
+		<script>
+			$(".wmy_date1").click(function() {
+				$(".all_time").show();
+				$(".sep_time").hide();
+			})
+			$(".wmy_date2").click(function() {
+				$(".all_time").hide();
+				$(".sep_time").show();
+
+			})
+		</script>
+
+		<script>
+			//图片上传预览    IE是用了滤镜。
+			function previewImage(file) {
+				var MAXWIDTH = 90;
+				var MAXHEIGHT = 90;
+				var div = document.getElementById('preview');
+				if(file.files.length > 0) {
+					if(file.files || file.files[0]) {
+						div.innerHTML = '<img id=imghead onclick=$("#previewImg").click()>';
+						var img = document.getElementById('imghead');
+						img.onload = function() {
+							var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+							img.width = rect.width;
+							img.height = rect.height;
+							//                 img.style.marginLeft = rect.left+'px';
+							img.style.marginTop = rect.top + 'px';
+						}
+						var reader = new FileReader();
+						reader.onload = function(evt) {
+							var json = [];
+							var img = evt.target.result;
+							json.push(img);
+							var pic = JSON.stringify(json);
+							$.ajax({
+								type: "post",
+								url: "store/picFileUpload",
+								async: true,
+								contentType: "application/json",
+								data: pic,
+								success: function(result) {
+									if(result.result) {
+										var url = result.data;
+										$("#preview img").attr("src", url);
+									} else {
+										alert("上传图片失败！");
+									}
+								}
+							});
+						}
+						reader.readAsDataURL(file.files[0]);
+					}
+				}
+				/*else //兼容IE
+				{
+					var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+					file.select();
+					var src = document.selection.createRange().text;
+					div.innerHTML = '<img id=imghead>';
+					var img = document.getElementById('imghead');
+					img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+					var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+					status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+					div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;" + sFilter + src + "\"'></div>";
+				}*/
+			}
+
+			function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+				var param = {
+					top: 0,
+					left: 0,
+					width: width,
+					height: height
+				};
+				if(width > maxWidth && height > maxHeight) {
+					rateWidth = width / maxWidth;
+					rateHeight = height / maxHeight;
+
+					if(rateWidth > rateHeight) {
+						param.width = maxWidth;
+						param.height = Math.round(height / rateWidth);
+					} else {
+						param.width = Math.round(width / rateHeight);
+						param.height = maxHeight;
+					}
+				}
+				param.left = Math.round((maxWidth - param.width) / 2);
+				param.top = Math.round((maxHeight - param.height) / 2);
+				return param;
+			}
+		</script>
+	</body>
+
+</html>

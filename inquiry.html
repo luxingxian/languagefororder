@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>查询</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/inquiryandorder.css" />
+		<link rel="stylesheet" href="css/dateRange.css" />
+	</head>
+
+	<body>
+		<div class="contentBox">
+			<!--头部-->
+			<div class="contentHeader">
+				<p><i></i> 
+					<a href="javascript:;" class="logout" ><img src="images/logout.png"/>注销</a>
+				</p>
+
+			</div>
+			<!--内容主题-->
+			<div class="mainBox clearfix">
+				<!--左侧边栏-->
+				<div class="slideMenu fl">
+					<ul>
+						<li>
+							<a href="Shop_maintenance.html">
+								<p><img src="img/icon_shop_g.png"><i>店铺维护</i></p>
+							</a>
+						</li>
+						<li class="active">
+							<a href="inquiry.html">
+								<p><img src="img/icon_require_w.png"><i>查询</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="dish_operation.html">
+								<p><img src="img/icon_dish_g.png"><i>菜品</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="order.html">
+								<p><img src="img/icon_order_g.png"><i>订单</i></p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--右侧编辑中心-->
+				<div class="editorCenter fr">
+					<div class="main">
+						<div class="polling">
+							<div class="polling_top">
+								<div class="potoday">
+									<span class="pdspan">今日</span>
+								</div>
+								<div class="ta_date l_date" id="div_date">
+									<span class="date_title" id="date"></span>
+								</div>
+							</div>
+							<div class="polling_show">
+								<ul>
+									<li class="liorder">
+										<div class="showdiv">
+											<p>订单</p>
+											<p id="orderqty"></p>
+										</div>
+										<div class="bgdiv">
+											<i></i>
+										</div>
+									</li>
+									<li class="lisales">
+										<div class="showdiv">
+											<p>菜品销量</p>
+											<p id="foodsales"></p>
+										</div>
+										<div class="bgdiv">
+											<i></i>
+										</div>
+									</li>
+									<li class="livolume">
+										<div class="showdiv">
+											<p>销售额</p>
+											<p id="salesvolume"></p>
+										</div>
+										<div class="bgdiv">
+											<i></i>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="ranking">
+							<div class="ranking_left">
+								<div class="writing">
+									<span>菜品销量排行TOP&nbsp;10</span>
+								</div>
+								<table>
+									<thead>
+										<tr>
+											<th width="8.8%">序号</th>
+											<th width="19.2%"><em>品类</em></th>
+											<th width="61.6%"><em>菜品名称</em></th>
+											<th width="10.4%"><em>数量</em></th>
+										</tr>
+									</thead>
+									<tbody id="lefttbody">
+
+									</tbody>
+								</table>
+							</div>
+							<div class="ranking_right">
+								<div class="writing">
+									<span>销售额排行TOP&nbsp;10</span>
+								</div>
+								<table>
+									<thead>
+										<tr>
+											<th width="8.8%">序号</th>
+											<th width="18.2%"><em>品类</em></th>
+											<th width="60%"><em>菜品名称</em></th>
+											<th width="13%"><em>销售额($)</em></th>
+										</tr>
+									</thead>
+									<tbody id="righttbody">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/dateRange.js"></script>
+		<script type="text/javascript" src="js/inquiry.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+
+	</body>
+
+</html>

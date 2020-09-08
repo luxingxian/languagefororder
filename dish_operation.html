@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>菜品</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/dish_operation.css" />
+	</head>
+
+	<body>
+		<div class="contentBox">
+			<!--头部-->
+			<div class="contentHeader">
+				<p><i></i> 
+					<a href="javascript:;" class="logout" ><img src="images/logout.png"/>注销</a>
+				</p>
+			</div>
+			<!--内容主题-->
+			<div class="mainBox clearfix">
+				<!--左侧边栏-->
+				<div class="slideMenu fl">
+					<ul>
+						<li>
+							<a href="Shop_maintenance.html">
+								<p><img src="img/icon_shop_g.png" data-img="img/icon_shop_w.png"><i>店铺维护</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="inquiry.html">
+								<p><img src="img/icon_require_g.png" data-img="img/icon_require_w.png"><i>查询</i></p>
+							</a>
+						</li>
+						<li class="active">
+							<a href="dish_operation.html">
+								<p><img src="img/icon_dish_w.png" data-img="img/icon_dish_g.png"><i>菜品</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="order.html">
+								<p><img src="img/icon_order_g.png" data-img="img/icon_order_w.png"><i>订单</i></p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--右侧编辑中心-->
+				<div class="editorCenter fr">
+					<div class="l_content clearfix dish">
+						<div class="classify_content fl">
+							<h3 class="title">品类维护</h3>
+							<div class="sales l_classify">
+								<p class="classify_title">促销类</p>
+							</div>
+							<div class="default l_classify">
+								<p class="classify_title">常规类</p>
+							</div>
+							<div class="show_box">
+								<img src="" alt="" class="big_img"/>
+							</div>
+							
+						</div>
+						<!--品类维护--310-ed---->
+
+						<div class="list_content fl">
+							<a href="javascript:;" class="btn import_btn">导入菜品</a>
+							<a href="javascript:;" class="btn import_default_btn">导入常规菜品</a>
+							<div class="list_box">
+								<p class="tip tip_one">请选择菜品分类</p>
+								<p class="tip tip_two">请导入菜品</p>
+								<p class="tip tip_three">请导入常规菜品</p>
+								<p class="tip tip_four">无可选择菜品</p>
+								<!--常规菜品导入-->
+								<div class="l_table table_one">
+									<ul class="thead clearfix">
+										<li class="th_one">选择</li>
+										<li class="th_two">菜品名称</li>
+										<li class="th_img">菜品图片</li>
+										<li class="th_three">售价($)</li>
+									</ul>
+									<div class="table_box">
+										<table>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!--常规菜品导入--ed---->
+
+								<!--常规菜品编辑-->
+								<div class="l_table table_two">
+									<ul class="thead clearfix">
+										<li class="th_one">序号</li>
+										<li class="th_two">菜品名称</li>
+										<li class="th_img">菜品图片</li>
+										<li class="th_three">标签</li>
+										<li class="th_four">售价($)</li>
+										<li class="th_five">排序</li>
+										<li class="th_six">删除</li>
+									</ul>
+									<div class="table_box">
+										<table>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!--常规菜品编辑--ed---->
+
+								<!--促销类菜品选择-->
+								<div class="l_table table_three">
+									<p class="classify_btns">
+									</p>
+									<ul class="thead clearfix">
+										<li class="th_one">选择</li>
+										<li class="th_two">菜品名称</li>
+										<li class="th_img">菜品图片</li>
+										<li class="th_three">售价($)</li>
+										<li class="th_four">促销价格($)</li>
+									</ul>
+									<div class="table_box">
+										<table>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!--促销类菜品选择--ed---->
+
+								<!--促销类菜品编辑-->
+								<div class="l_table table_four">
+									<p class="classify_btns">
+									</p>
+									<ul class="thead clearfix">
+										<li class="th_one">序号</li>
+										<li class="th_two">菜品名称</li>
+										<li class="th_img">菜品图片</li>
+										<li class="th_three">品类</li>
+										<li class="th_four">售价($)</li>
+										<li class="th_five">促销价格($)</li>
+										<li class="th_six">排序</li>
+										<li class="th_seven">删除</li>
+									</ul>
+									<div class="table_box">
+										<table>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!--促销类菜品编辑--ed---->
+							</div>
+							<p class="food_btns">
+								<a href="javascript:;" class="btn save_btn">封装存储</a>
+								<a href="javascript:;" class="btn save_pro">封装存储</a>
+								<a href="javascript:;" class="btn add_btn">菜品添加</a>
+								<a href="javascript:;" class="btn sure_btn">确认</a>
+								<a href="javascript:;" class="btn cancle_btn">取消</a>
+							</p>
+							<p class="loading"><span></span></p>
+						</div>
+						<!--菜品添加、展示列表-->
+					</div>
+					<!--l_content-------ed-->
+				</div>
+			</div>
+			<!--弹窗-->
+			<div class="popup pop_one">
+				<p class="pop_title">添加菜品<i>×</i></p>
+				<p class="pop_text">请您添加菜品</p>
+				<p class="pop_btns">
+					<a href="javascript:;" class="cancle">取消</a>
+					<a href="javascript:;" class="sure">确认</a>
+				</p>
+			</div>
+			<div class="popup pop_two">
+				<p class="pop_title">菜品添加<i>×</i></p>
+				<p class="pop_text">请选择菜品添加</p>
+				<p class="pop_btns">
+					<a href="javascript:;" class="cancle">取消</a>
+					<a href="javascript:;" class="sure">确认</a>
+				</p>
+			</div>
+			<div class="popup pop_three">
+				<p class="pop_title">删除<i>×</i></p>
+				<p class="pop_text">确认删除</p>
+				<p class="pop_btns">
+					<a href="javascript:;" class="cancle">取消</a>
+					<a href="javascript:;" class="sure">确认</a>
+				</p>
+			</div>
+			<div class="popup pop_three_pro">
+				<p class="pop_title">删除<i>×</i></p>
+				<p class="pop_text">确认删除</p>
+				<p class="pop_btns">
+					<a href="javascript:;" class="cancle">取消</a>
+					<a href="javascript:;" class="sure">确认</a>
+				</p>
+			</div>
+			<div class="popup pop_four">
+				<p class="pop_title">封装存储</p>
+				<p class="pop_text">封装储存成功</p>
+			</div>
+			<div class="popup pop_five">
+				<p class="pop_title">提示</p>
+				<p class="pop_text">该分类下暂无可添加菜品</p>
+			</div>
+			<div class="drop"></div>
+			
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/dish.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,20 @@
+body{background: #e6e6e6;}
+.clearfix:after{content:"";display:block;height:0;width: 0;clear:both;visibility:hidden;}
+/*contentBox*/
+.contentBox{width: 1366px;margin: 0 auto;height: auto;background: #f1f1f1;/*border-left: 1px solid #dcdcdc;border-right: 1px solid #dcdcdc;*/}
+.contentBox .contentHeader{width: 100%;height: 60px;line-height: 60px; border-bottom: 1px solid #dcdcdc;background: #fafafa;}
+.contentBox .contentHeader p{margin-left: 40px;font-size: 20px;color: #333333;}
+.contentBox .contentHeader p .logout{font-size: 12px;color: #616f7b;float: right;margin-right: 20px;vertical-align: middle;}
+.contentBox .contentHeader p .logout img{height: 16px;width: 16px;vertical-align: text-top;margin-right: 10px;}
+/*内容主题*/
+.contentBox .mainBox{width: 100%;height: auto;}
+.contentBox .mainBox .slideMenu{width: 12%;background: #ffffff;}
+.contentBox .mainBox .slideMenu ul{width: 100%;margin-top: 45px;}
+.contentBox .mainBox .slideMenu ul li{width: 100%;font-size: 14px;color: #666666;width: 140px;height: 40px;line-height: 40px;border-radius: 8px;margin: auto;margin-bottom: 20px;cursor: pointer;}
+.contentBox .mainBox .slideMenu ul li a{font-size: 14px;color: #666666;}
+.contentBox .mainBox .slideMenu ul li.active{background: #42a5f5;}
+.contentBox .mainBox .slideMenu ul li.active i{color: #fff;}
+.contentBox .mainBox .slideMenu ul li:hover{background: #42a5f5;}
+.contentBox .mainBox .slideMenu ul li:hover i{color: #ffffff;}
+.contentBox .mainBox .slideMenu ul li p img{width: 20px;height: 20px;vertical-align: sub;padding: 0px 9px 0px 27px;}
+.contentBox .mainBox .editorCenter{width: 88%;}

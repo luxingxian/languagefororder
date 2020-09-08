@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/inquiryandorder.css" />
+		<link rel="stylesheet" href="css/jquery-ui.min.css" />
+	</head>
+
+	<body>
+		<div class="contentBox">
+			<!--头部-->
+			<div class="contentHeader">
+				<p><i></i> 
+					<a href="javascript:;" class="logout" ><img src="images/logout.png"/>注销</a>
+				</p>
+
+			</div>
+			<!--内容主题-->
+			<div class="mainBox clearfix">
+				<!--左侧边栏-->
+				<div class="slideMenu fl">
+					<ul>
+						<li>
+							<a href="Shop_maintenance.html">
+								<p><img src="img/icon_shop_g.png"><i>店铺维护</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="inquiry.html">
+								<p><img src="img/icon_require_g.png"><i>查询</i></p>
+							</a>
+						</li>
+						<li>
+							<a href="dish_operation.html">
+								<p><img src="img/icon_dish_g.png"><i>菜品</i></p>
+							</a>
+						</li>
+						<li class="active">
+							<a href="order.html">
+								<p><img src="img/icon_order_w.png"><i>订单</i></p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--右侧编辑中心-->
+				<div class="editorCenter fr">
+					<div class="main">
+						<div class="ordertop">
+							<div class="odttext">
+								<span>订单详情</span>
+							</div>
+							<div class="odtshow">
+								<div class="odttime">
+									<div id="time">
+										<input type="text" id="date" value="日期查询">
+										<label class="ione" for="date"></label>
+									</div>
+								</div>
+								<ul>
+									<li><span>今日销售量</span><em id="totalCount"></em></li>
+									<li><span>今日销售额</span><em id="totalPrice"></em></li>
+								</ul>
+							</div>
+						</div>
+						<div class="orderlist" id="orderlist">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/order.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+
+	</body>
+
+</html>
